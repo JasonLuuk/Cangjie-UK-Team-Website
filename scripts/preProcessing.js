@@ -10,7 +10,7 @@ import { visit } from 'unist-util-visit';
 import rehypeSlug from 'rehype-slug';
 
 const cangjieGrammar = JSON.parse(
-  fs.readFileSync(path.resolve('./CangjieHighlights.json'), 'utf-8')
+  fs.readFileSync(path.resolve(__dirname, '..', 'data', 'CangjieHighlights.json'), 'utf-8')
 );
 
 const highlighter = await getHighlighter(
