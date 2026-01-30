@@ -1,13 +1,12 @@
 # Cangjie UK Team website
 
-This website was create to represent open source Cangjie projects of Huawei research center. 
-
+This website was create to represent open source Cangjie projects of Huawei research center.
 
 ## How to add a new blog to the website?
 
-You need to add another entry in the **blogInformation.json** file, and add a *.md* file with your blog content in the **blogs/** folder. The name in the *.json* file has to match the name of the *.md* file.
+You need to add another entry in **data/blogInformation.json**, and add a *.md* file with your blog content in the **blogs/** folder. The name in the *.json* file has to match the name of the *.md* file.
 
-In the .json file you should include:
+In the JSON file you should include:
 - authors of the blog
 - gitcode repo link
 - name of the blog
@@ -17,7 +16,7 @@ In the .json file you should include:
 
 - **Add a new news item**
   1. Create a *.md* file in the **news/** folder (e.g. `My News Title.md`).
-  2. Add an entry in **newsInformation.json** with:
+  2. Add an entry in **data/newsInformation.json** with:
      - **name**: exactly the filename without `.md` (e.g. `My News Title` — must match the file).
      - **title**: the title shown in the list and on the news page.
      - **date**: in `DD/MM/YYYY` format.
@@ -29,10 +28,10 @@ In the .json file you should include:
 
 - **Rename a news file**
   1. Rename the *.md* file in **news/**.
-  2. Update the **name** field of that item in **newsInformation.json** so it matches the new filename (without `.md`).
+  2. Update the **name** field of that item in **data/newsInformation.json** so it matches the new filename (without `.md`).
   3. Run `npm run build-blogs`.
 
-The list and links on the homepage are driven by **newsInformation.json**; the **name** in each entry must always match the *.md* filename (without extension).
+The list and links on the homepage are driven by **data/newsInformation.json**; the **name** in each entry must always match the *.md* filename (without extension).
 
 ## Build
 

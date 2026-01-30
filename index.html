@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cangjie UK Team</title>
+    <link rel="icon" href="./assets/cangjie-icon.png" type="image/png">
     <meta name="description" content="Cangjie UK Team – tutorials, projects, and practical resources for developers exploring the Cangjie programming language.">
     <meta name="theme-color" content="#20b2aa">
     <meta property="og:title" content="Cangjie UK Team">
@@ -14,7 +15,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cangjie UK Team">
     <meta name="twitter:description" content="Learn Cangjie, explore open-source projects, and follow our updates.">
-    <link rel="stylesheet" href="index-style.css?v=20251030">
+    <link rel="stylesheet" href="css/index-style.css?v=20260128b">
+    <script src="js/site-nav.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -26,9 +28,7 @@
                 </span>
             </a>
             <nav class="site-nav" aria-label="Primary">
-                <a href="#learn" class="nav-link">Learn</a>
-                <a href="#projects" class="nav-link">Blogs</a>
-                <a href="about.html" class="nav-link">About</a>
+                <!-- filled by js/site-nav.js from data/site-nav.json -->
             </nav>
         </div>
     </header>
@@ -36,23 +36,20 @@
         <header class="hero-section">
             <h1 class="main-title">Cangjie UK Team</h1>
             <p class="subtitle" aria-label="Site tagline">
-                Unlock a new application programming experience with Cangjie — high performance, strong safety.
+                Building and empowering the Cangjie ecosystem in the UK
             </p>
         </header>
 
         <main class="content">
             <!-- Feature Rail -->
             <section class="feature-rail" aria-label="Key Cangjie features">
-                <!-- Primary learn button: jump to original Learn Cangjie tutorial -->
-                <a class="feature-chip feature-chip-primary" href="https://aliftrs.github.io/cangjietutorial.io/" target="_blank" rel="noopener noreferrer">
+                <a class="feature-chip feature-chip-primary" href="learn/learn.html">
                     <span class="feature-code">CJ</span>
                     <span class="feature-text">
                         <span class="feature-label">Learn Cangjie</span>
                         <span class="feature-subtitle">Start tutorial</span>
                     </span>
                 </a>
-
-                <!-- Placeholder buttons (no navigation for now) -->
                 <button class="feature-chip" type="button">
                     <span class="feature-code">EH</span>
                     <span class="feature-label">Effect Handler</span>
@@ -67,7 +64,7 @@
                 <!-- Blog / Projects Column -->
                 <section class="projects-section" id="projects">
                     <div class="section-header">
-                        <h2>Blogs</h2>
+                        <h2>Blog Posts</h2>
                     </div>
                     <div class="projects-grid" id="projects-container">
                         <!-- Blog cards will be loaded dynamically -->
@@ -85,8 +82,28 @@
                     <section class="sidebar-card news-card">
                         <h3>News</h3>
                         <div id="news-container" class="news-list" aria-label="News">
-                            <!-- Filled from newsInformation.json -->
+                            <!-- Filled from data/newsInformation.json -->
                         </div>
+                    </section>
+
+                    <!-- Community (Discord) -->
+                    <section class="sidebar-card community-card">
+                        <h3>Community</h3>
+                        <p>Join our official Discord to ask questions, share ideas, and discuss with other Cangjie developers.</p>
+                        <a class="community-cta" href="https://discord.gg/smhXaXMA" target="_blank" rel="noopener noreferrer" aria-label="Join Cangjie UK Discord server">
+                            <img class="community-cta-icon" src="./assets/discord.png" alt="" loading="lazy">
+                        </a>
+                    </section>
+
+                    <!-- Subscribe -->
+                    <section class="sidebar-card subscribe-card">
+                        <h3>Subscribe</h3>
+                        <p>Get new Cangjie posts delivered occasionally</p>
+                        <form class="subscribe-form" action="https://example.com/subscribe" method="post">
+                            <label class="sr-only" for="subscribe-email">Email address</label>
+                            <input id="subscribe-email" name="email" type="email" placeholder="Email Address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
                     </section>
 
                     <!-- Tag-based highlights -->
@@ -118,14 +135,10 @@
                         </ul>
                     </section>
 
-                    <!-- Official Channels (icons from assets) -->
+                    <!-- Follow us (icons from assets) -->
                     <section class="sidebar-card follow-us-card" id="about">
-                        <h3>Official Channels</h3>
+                        <h3>Follow us</h3>
                         <nav class="social-links" aria-label="Official links">
-                            <a class="social-link" href="https://cangjie-lang.cn/en" target="_blank" rel="noopener noreferrer">
-                                <img class="social-icon-img" src="./assets/cangjie-icon.png" alt="">
-                                <span class="social-label">Cangjie Official Website</span>
-                            </a>
                             <a class="social-link" href="https://www.youtube.com/@Cangjie_Lang" target="_blank" rel="noopener noreferrer">
                                 <img class="social-icon-img" src="./assets/youtube.png" alt="">
                                 <span class="social-label">YouTube</span>
@@ -149,7 +162,7 @@
         </main>
     </div>
 
-    <script type="module" src="distribiution/index-script.js?v=20251030"></script>
-    <script type="module" src="distribiution/tableOfContents.js?v=20251030"></script>
+    <script type="module" src="js/index-script.js?v=20251030"></script>
+    <script type="module" src="js/tableOfContents.js?v=20251030"></script>
 </body>
 </html>
