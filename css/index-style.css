@@ -382,6 +382,41 @@ a.brand-link:hover { color: #20b2aa; }
   color: #6c757d;
 }
 
+.community-card p {
+  margin-bottom: 1rem;
+}
+
+.community-cta {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.community-cta:hover {
+  opacity: 0.9;
+}
+
+.community-cta:focus-visible {
+  outline: 2px solid #5865F2;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.community-cta-icon {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 6px;
+}
+
 .news-list {
   display: flex;
   flex-direction: column;
