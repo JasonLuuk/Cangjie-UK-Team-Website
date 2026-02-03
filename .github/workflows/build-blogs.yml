@@ -14,7 +14,6 @@ on:
       - 'package-lock.json'
   workflow_dispatch:
 
-# 同一分支只保留最新一次运行，避免多次 push 触发多次 Pages 部署导致前一次被取消
 concurrency:
   group: build-blogs-${{ github.ref }}
   cancel-in-progress: true
