@@ -54,6 +54,12 @@ In the JSON file you should include:
 - name of the blog
 - date of creation
 
+When you push changes to **blogs/** or **news/** (or the data JSON files), the GitHub Actions workflow generates HTML in **blogsHTML/** and **newsHTML/** and commits them. To build locally (e.g. before pushing), from the project root run:
+
+```bash
+npm run build-blogs
+```
+
 ## How to add or update news?
 
 - **Add a new news item**
@@ -73,22 +79,4 @@ In the JSON file you should include:
   2. Update the **name** field of that item in **data/newsInformation.json** so it matches the new filename (without `.md`).
   3. Run `npm run build-blogs`.
 
-The list and links on the homepage are driven by **data/newsInformation.json**; the **name** in each entry must always match the *.md* filename (without extension).
-
-## Build
-
-When you push changes to **blogs/** or **news/** (or the data JSON files), the GitHub Actions workflow generates HTML in **blogsHTML/** and **newsHTML/** and commits them.
-
-To build locally (e.g. before pushing), from the project root run:
-
-```bash
-npm run build-blogs
-```
-
-## GitHub Pages deployment
-
-The repo includes a custom workflow **Deploy to GitHub Pages** (`.github/workflows/deploy-pages.yml`) that builds blogs/news and deploys the site. To avoid "Canceling since a higher priority waiting request..." errors:
-
-1. In the repo go to **Settings → Pages**.
-2. Under "Build and deployment", set **Source** to **GitHub Actions** (not "Deploy from a branch").
-3. The workflow **Deploy to GitHub Pages** will run on push to `main` or `dev`; it uses `concurrency: cancel-in-progress: false` so a new push does not cancel an in-progress deployment. 
+The list and links on the homepage are driven by **data/newsInformation.json**; the **name** in each entry must always match the *.md* filename (without extension). 
