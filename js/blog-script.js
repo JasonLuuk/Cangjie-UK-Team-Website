@@ -7,6 +7,7 @@ class BlogWebsite
     {
         this.blogId = 0 ;
         this.blogName = "Example" ;
+        this.blogSlug = "Example" ;
         this.blogRepoLink = "https://www.example.com/" ;
         this.authors = [] ;
         this.init() ;
@@ -58,6 +59,7 @@ class BlogWebsite
         const blogInformation = blogInformationList[this.blogId] ;
 
         this.blogName = blogInformation.name ;
+        this.blogSlug = (blogInformation.slug && String(blogInformation.slug).trim()) || blogInformation.name ;
         this.blogRepoLink = (blogInformation.repoLink && String(blogInformation.repoLink).trim()) || "" ;
         this.authors = blogInformation.authors || [] ;
     }
@@ -108,16 +110,71 @@ class BlogWebsite
     async loadBlog()
     {
         const blogContent = document.getElementById("blog-content") ;
-        const url = this.baseUrl(`blogsHTML/${this.blogName}.html`) ;
+        const url = this.baseUrl(`blogsHTML/${this.blogSlug}.html`) ;
         const response = await fetch(url) ;
-        if (!response.ok) throw new Error(`Blog ${this.blogName}.html: ${response.status}`) ;
+        if (!response.ok) throw new Error(`Blog ${this.blogSlug}.html: ${response.status}`) ;
         const text = await response.text() ;
         blogContent.innerHTML = text ;
+        this.wrapBlogImages(blogContent) ;
+    }
+
+    wrapBlogImages(container)
+    {
+        const maxW = container.clientWidth ;
+        const images = Array.from(container.querySelectorAll("img")) ;
+        images.forEach((img) => {
+            const wrapper = document.createElement("div") ;
+            wrapper.className = "blog-img-wrapper" ;
+            img.parentNode.insertBefore(wrapper, img) ;
+            wrapper.appendChild(img) ;
+            const checkOversized = () => {
+                const w = container.clientWidth || maxW ;
+                if (w > 0 && img.naturalWidth > w) {
+                    wrapper.classList.add("has-zoom") ;
+                    wrapper.addEventListener("click", (e) => {
+                        e.preventDefault() ;
+                        this.openLightbox(img.currentSrc || img.src, img.alt) ;
+                    }) ;
+                }
+            } ;
+            if (img.complete) checkOversized() ;
+            else img.addEventListener("load", checkOversized) ;
+        }) ;
+        this.ensureLightbox() ;
+    }
+
+    ensureLightbox()
+    {
+        if (this._lightbox) return ;
+        const lb = document.createElement("div") ;
+        lb.id = "blog-img-lightbox" ;
+        lb.className = "blog-img-lightbox" ;
+        const lbImg = document.createElement("img") ;
+        lbImg.alt = "" ;
+        lb.appendChild(lbImg) ;
+        document.body.appendChild(lb) ;
+        lb.addEventListener("click", (e) => { if (e.target === lb) this.closeLightbox() ; }) ;
+        lbImg.addEventListener("click", () => this.closeLightbox()) ;
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape" && this._lightbox.classList.contains("is-open")) this.closeLightbox() ; }) ;
+        this._lightbox = lb ;
+        this._lightboxImg = lbImg ;
+    }
+
+    openLightbox(src, alt)
+    {
+        this._lightboxImg.src = src ;
+        this._lightboxImg.alt = alt || "" ;
+        this._lightbox.classList.add("is-open") ;
+    }
+
+    closeLightbox()
+    {
+        this._lightbox.classList.remove("is-open") ;
     }
 
     async loadTableOfContents()
     {
-        const response = await fetch(this.baseUrl(`blogs/${this.blogName}.md`)) ;
+        const response = await fetch(this.baseUrl(`blogs/${this.blogSlug}.md`)) ;
         if (!response.ok) return ;
         const markdownContent = await response.text() ;
 

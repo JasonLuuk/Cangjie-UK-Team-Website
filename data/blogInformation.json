@@ -2,9 +2,29 @@
   {
     "name": "MagicExplorer",
     "repoLink": "https://gitcode.com/Cangjie-TPC/MagicExplorer",
-    "authors": ["Maksymilian Sieklinski", "Isaac Lee"],
+    "authors": [
+      "Maksymilian Sieklinski",
+      "Isaac Lee"
+    ],
     "date": "20/08/2020",
     "description": "An automated browser agent system built with the Cangjie Magic framework, integrating Playwright via MCP for real-world web automation.",
-    "tags": ["Automation", "Agents", "Playwright", "Cangjie"]
+    "tags": [
+      "Automation",
+      "Agents",
+      "Playwright",
+      "Cangjie"
+    ]
+  },
+  {
+    "name": "The challenge of dynamic binding",
+    "repoLink": "",
+    "authors": ["Dan Ghica"],
+    "date": "31/10/2025",
+    "description": "An exploration of dynamic binding in programming languages, highlighting its power, complexity, and impact on language design, performance, and reasoning..",
+    "tags": ["Automation", 
+      "Runtime Systems", 
+      "Language Semantics", 
+      "Programming Models",
+      "Cangjie"]
   }
 ]
