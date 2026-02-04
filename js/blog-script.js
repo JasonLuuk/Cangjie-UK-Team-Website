@@ -51,7 +51,8 @@ class BlogWebsite
 
     async getBlogInformation()
     {
-        const response = await fetch(this.baseUrl("data/blogInformation.json")) ;
+        const jsonUrl = new URL("../data/blogInformation.json", window.location.href).href ;
+        const response = await fetch(jsonUrl) ;
         if (!response.ok) throw new Error(`blogInformation.json: ${response.status}`) ;
 
         const blogInformationList = await response.json() ;
@@ -83,7 +84,10 @@ class BlogWebsite
         container.style.display = "" ;
         container.removeAttribute("hidden") ;
         const repoLinkElement = document.getElementById("repo-link") ;
-        if (repoLinkElement) repoLinkElement.href = this.blogRepoLink ;
+        if (repoLinkElement) {
+            const href = this.blogRepoLink ;
+            repoLinkElement.href = /^https?:\/\//i.test(href) ? href : this.baseUrl(href.replace(/^\//, "")) ;
+        }
     }
 
     loadAuthorsList()
@@ -110,7 +114,7 @@ class BlogWebsite
     async loadBlog()
     {
         const blogContent = document.getElementById("blog-content") ;
-        const url = this.baseUrl(`blogsHTML/${this.blogSlug}.html`) ;
+        const url = new URL(`../blogsHTML/${this.blogSlug}.html`, window.location.href).href ;
         const response = await fetch(url) ;
         if (!response.ok) throw new Error(`Blog ${this.blogSlug}.html: ${response.status}`) ;
         const text = await response.text() ;
