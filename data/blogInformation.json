@@ -30,7 +30,7 @@
   {
     "name": "Building Your First Cangjie Application on OpenHarmony",
     "repoLink": "",
-    "authors": ["Jiashun Lu"],
+    "authors": ["Jiashun Lu","Xiang Gao"],
     "date": "04/02/2026",
     "description": "A Step-by-Step Guide to Setting Up the Environment from Scratch and Completing a Cangjie Demo Project on OpenHarmony",
     "tags": ["Tutorial", 

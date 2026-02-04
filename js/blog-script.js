@@ -67,9 +67,8 @@ class BlogWebsite
 
     loadBlogTitle()
     {
-        const titleElement = document.getElementById("blog-name") ;
-        const temp = this.blogName.replace(/_/g," ") ;
-        titleElement.textContent = `${temp}` ;
+        const displayName = this.blogName.replace(/_/g, " ") ;
+        document.title = `${displayName} — Cangjie UK Team` ;
     }
 
     loadRepoLink()
