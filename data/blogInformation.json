@@ -65,6 +65,7 @@
     ],
     "date": "16/02/2026",
     "description": "How can contracts improve LLM-generated code quality? Dr. Bohua Zhan from Huawei 2012 Programming Language Lab presents groundbreaking research on integrating Design by Contract principles with large language model code generation using the Cangjie programming language.",
+    "descriptionVideo": "https://www.youtube.com/watch?v=jvPmcEIelSU",
     "tags": [
       "Contracts",
       "LLM",
@@ -84,6 +85,7 @@
     ],
     "date": "12/02/2026",
     "description": "In this session, researchers from Huawei's Programming Language Lab in Edinburgh share cutting-edge features for concurrent and distributed programming in Cangjie.",
+    "descriptionVideo": "https://www.youtube.com/watch?v=jGr-s9ABHRA",
     "tags": [
       "Effect Handlers",
       "Distributed Systems",
@@ -97,6 +99,7 @@
     "authors": ["Jianbiao He","Xuezhi Wang"],
     "date": "11/02/2026",
     "description": "Exciting news for the global developer community! The official English edition of the Cangjie Programming digital textbook is now live on Huawei ICT Academy.",
+    "descriptionImage": "figures/Cangjie Programming.jpg",
     "tags": [
       "Tutorial"
     ]

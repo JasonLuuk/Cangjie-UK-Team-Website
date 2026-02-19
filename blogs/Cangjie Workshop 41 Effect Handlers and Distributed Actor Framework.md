@@ -2,6 +2,8 @@
 
 In this session, researchers from Huawei's Programming Language Lab in Edinburgh share cutting-edge features for concurrent and distributed programming in Cangjie.
 
+🔗 **Video Link:** [https://www.youtube.com/watch?v=jGr-s9ABHRA](https://www.youtube.com/watch?v=jGr-s9ABHRA)
+
 ## Topics Covered
 
 ### Effect Handlers in Cangjie — Dr. Magnus Morton
