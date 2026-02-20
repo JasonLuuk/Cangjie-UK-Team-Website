@@ -258,6 +258,14 @@ main.blog-main .blog-main-inner > .md-content-links {
 #news-content code { background: transparent; padding: 0.2rem 0.4rem; }
 #news-content a { color: #20b2aa; font-weight: 600; }
 #news-content a:hover { text-decoration: underline; }
+#news-content img,
+.news-article-body img {
+  max-width: 320px !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 1rem 0 !important;
+}
 
 .loading {
   display: flex;
