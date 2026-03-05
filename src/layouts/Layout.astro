@@ -1,6 +1,7 @@
 ---
 import "../styles/index.css";
 import cangjieIcon from "../assets/cangjie-icon.png";
+import SiteHeader from "../components/SiteHeader.astro";
 
 interface Props {
     title: string;
@@ -35,6 +36,7 @@ const {
         <meta name="twitter:description" content={description} />
     </head>
     <body>
+        <SiteHeader />
         <slot />
     </body>
 </html>
