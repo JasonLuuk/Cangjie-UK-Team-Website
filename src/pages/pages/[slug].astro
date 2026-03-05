@@ -2,9 +2,11 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-    const pageEntries: CollectionEntry<"pages">[] = await getCollection("pages");
+    const pageEntries: CollectionEntry<"pages">[] =
+        await getCollection("pages");
 
     return pageEntries.map((entry) => ({
         params: { slug: entry.data.route },
@@ -35,22 +37,10 @@ const { Content, headings } = await entry.render();
             <div class="md-content-links">
                 <div class="blog-info">
                     <h3>Table of Contents</h3>
-                    <nav class="toc">
-                        {
-                            headings.length > 0 ? (
-                                headings.map((heading) => (
-                                    <a
-                                        href={`#${heading.slug}`}
-                                        class={`toc-link toc-link-${heading.depth}`}
-                                    >
-                                        {heading.text}
-                                    </a>
-                                ))
-                            ) : (
-                                <p class="no-toc">No sections found</p>
-                            )
-                        }
-                    </nav>
+                    <TableOfContents
+                        headings={headings}
+                        contentSelector="#blog-content"
+                    />
                 </div>
             </div>
         </div>
