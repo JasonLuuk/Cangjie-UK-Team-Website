@@ -2,6 +2,8 @@
 import "../styles/index.css";
 import "../styles/site-header.css";
 import "../styles/blog.css";
+import cangjieIcon from "../assets/cangjie-icon.png";
+import cangjieLogo from "../assets/cangjie-logo.png";
 
 interface Props {
     title: string;
@@ -29,7 +31,7 @@ const navItems = [
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
-        <link rel="icon" href="/assets/cangjie-icon.png" type="image/png" />
+        <link rel="icon" href={cangjieIcon.src} type="image/png" />
         <meta name="description" content={description} />
         <meta name="theme-color" content="#20b2aa" />
         <meta property="og:title" content={title} />
@@ -56,7 +58,7 @@ const navItems = [
                     <span class="brand-mark">
                         <img
                             class="brand-logo"
-                            src="/assets/cangjie-logo.png"
+                            src={cangjieLogo.src}
                             alt="Cangjie Logo"
                             loading="lazy"
                         />

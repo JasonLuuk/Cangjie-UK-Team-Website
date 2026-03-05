@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import cangjieLogo from "../assets/cangjie-logo.png";
 
 const navItems = [
     { label: "Download", href: "https://cangjie-lang.cn/en/download" },
@@ -20,7 +21,7 @@ const navItems = [
                 <span class="brand-mark">
                     <img
                         class="brand-logo"
-                        src="/assets/cangjie-logo.png"
+                        src={cangjieLogo.src}
                         alt="Cangjie Logo"
                         loading="lazy"
                     />

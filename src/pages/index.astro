@@ -2,6 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import cangjieLogo from "../assets/cangjie-logo.png";
+import discordIcon from "../assets/discord.png";
+import youtubeIcon from "../assets/youtube.png";
+import twitterIcon from "../assets/twitter.png";
+import linkedInIcon from "../assets/linkedin.png";
+import gitcodeIcon from "../assets/gitcode.png";
 
 const blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
 const newsEntries: CollectionEntry<"news">[] = await getCollection("news");
@@ -60,7 +66,7 @@ const navItems = [
                 <span class="brand-mark">
                     <img
                         class="brand-logo"
-                        src="/assets/cangjie-logo.png"
+                        src={cangjieLogo.src}
                         alt="Cangjie Logo"
                         loading="lazy"
                     />
@@ -152,6 +158,7 @@ const navItems = [
                                                             src={
                                                                 entry.data
                                                                     .descriptionImage
+                                                                    ?.src
                                                             }
                                                             alt={
                                                                 entry.data
@@ -253,7 +260,7 @@ const navItems = [
                         >
                             <img
                                 class="community-cta-icon"
-                                src="/assets/discord.png"
+                                src={discordIcon.src}
                                 alt=""
                                 loading="lazy"
                             />
@@ -326,7 +333,7 @@ const navItems = [
                             >
                                 <img
                                     class="social-icon-img"
-                                    src="/assets/youtube.png"
+                                    src={youtubeIcon.src}
                                     alt=""
                                 />
                                 <span class="social-label">YouTube</span>
@@ -339,7 +346,7 @@ const navItems = [
                             >
                                 <img
                                     class="social-icon-img"
-                                    src="/assets/twitter.png"
+                                    src={twitterIcon.src}
                                     alt=""
                                 />
                                 <span class="social-label">X (Twitter)</span>
@@ -352,7 +359,7 @@ const navItems = [
                             >
                                 <img
                                     class="social-icon-img"
-                                    src="/assets/linkedin.png"
+                                    src={linkedInIcon.src}
                                     alt=""
                                 />
                                 <span class="social-label">LinkedIn</span>
@@ -365,7 +372,7 @@ const navItems = [
                             >
                                 <img
                                     class="social-icon-img"
-                                    src="/assets/gitcode.png"
+                                    src={gitcodeIcon.src}
                                     alt=""
                                 />
                                 <span class="social-label">GitCode</span>
