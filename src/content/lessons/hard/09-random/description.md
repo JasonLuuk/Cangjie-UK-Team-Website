@@ -1,4 +1,4 @@
-Random
+# Random
 
 The random packages generates pseudo random numbers. The random class sets a seed in
 which it uses to generate random numbers, instance with the same seed will generate the 

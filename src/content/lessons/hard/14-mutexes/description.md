@@ -1,6 +1,6 @@
-Mutexes
+# Mutexes
 
-A mutex (mutual exclusion) is a synchronization primitive that acts like a lock, ensuring only one thread can access a critical section of shared code or data at any given time. Threads acquire the mutex before entering the critical section and release it upon exiting, preventing race conditions and maintaining data integrity.
+A `Mutex` (mutual exclusion) is a synchronization primitive that acts like a lock, ensuring only one thread can access a critical section of shared code or data at any given time. Threads acquire the mutex before entering the critical section and release it upon exiting, preventing race conditions and maintaining data integrity.
 
 Mutex initialization.
 
@@ -11,12 +11,8 @@ Perform increment.
 Unlock the mutex.
 
 
-
-
-
 Make sure all threads finish.
 
 
-
 You can also manage locking and unlocking automatically by enclosing the critical
-section of code in 'synchronized'.
+section of code in `synchronized`.

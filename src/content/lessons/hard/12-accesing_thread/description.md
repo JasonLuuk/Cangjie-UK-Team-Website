@@ -1,19 +1,13 @@
-Accesing Thread
+# Accessing Thread
 
-Newly created threads in Cangjie can end in advance if the thread that created them terminates. However, you can use the return value of a thread to wait until the thread execution is complete. 
-The return value of a thread is Future<T>. You can also think about it like a box that promises that this value will be calculated, you just have to wait.
-
-
-
+Newly created threads in Cangjie can terminate early if the thread that created them terminates. However, you can use the return value of a thread to wait until execution is complete.
+The return value of a thread is `Future<T>`. You can think of it as a box that promises this value will be computed; you just need to wait.
 
 
 Normal function call.
 
 
-Return value of a thread, is of type Future<Int64>.
+The return value of a thread is of type `Future<Int64>`.
 
 
-
-
-
-Here we use one of the functions of Future, .get(), which waits for a thread to finish execution and produce a value. This way, the main thread will never finish before the newly created ones.
+Here we use one of the functions on `Future`, `get()`, which waits for a thread to finish execution and produce a value. This way, the `main` thread will not finish before the newly created ones.
