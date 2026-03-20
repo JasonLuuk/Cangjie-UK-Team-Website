@@ -9,11 +9,8 @@ main() {
 
     for (_ in 0..1000) {
         let fut = spawn {
-            =>
-                sleep(Duration.millisecond)
-                //var temp = count.load()
-                //while(!count.compareAndSwap(temp,temp+1)) {temp = count.load()}
-                count.fetchAdd(1)
+            sleep(Duration.millisecond)
+            count.fetchAdd(1)
         }
         list.append(fut)
     }

@@ -1,4 +1,4 @@
-interface Ia { // 'open' modifier is optional.
+interface Ia {
     func f(): Unit
 }
 

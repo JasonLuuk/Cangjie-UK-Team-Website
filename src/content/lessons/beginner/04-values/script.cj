@@ -2,20 +2,20 @@ main() {
     println("cang" + "jie") // cangjie
 
     println('1 + 1 = ${1 + 1}') // 2
-    println('7.0 / 3.0 = ${7.0 / 3.0}') //3.50000
+    println('7.0 / 3.0 = ${7.0 / 3.0}') // 3.50000
 
     var bit64: Int64 = 3
     var bit32: Int32 = 2
     var bit16: Int16 = 1
     println("${bit64} ${bit32} ${bit16}")
 
-    //similarly for unsigned integers
+    // Similarly for unsigned integers
     var uBit64: UInt64 = 6
     var uBit32: UInt32 = 5
     var uBit16: UInt16 = 4
     println("${uBit64} ${uBit32} ${uBit16}")
 
-    //floats
+    // Floats
     var fBit64: Float64 = 9.0
     var fBit32: Float32 = 8.0
     var fBit16: Float16 = 7.0

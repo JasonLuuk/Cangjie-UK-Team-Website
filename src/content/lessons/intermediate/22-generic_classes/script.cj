@@ -2,7 +2,8 @@ class Queue<T> where T <: T {
     let MaxSize = 100
     let values: Array<?T>
 
-    public Queue(var number_of_elements!: Int64 = 0, var start!: Int64 = 0, var end!: Int64 = 0) {
+    public Queue(var number_of_elements!: Int64 = 0,
+                 var start!: Int64 = 0, var end!: Int64 = 0) {
         values = Array<?T>(MaxSize, item: None)
     }
 

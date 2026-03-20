@@ -10,11 +10,10 @@ main() {
 
     for (_ in 0..1000) {
         let fut = spawn {
-            =>
-                sleep(Duration.millisecond)
-                mtx.lock()
-                count++
-                mtx.unlock()
+            sleep(Duration.millisecond)
+            mtx.lock()
+            count++
+            mtx.unlock()
         }
         list.append(fut)
     }

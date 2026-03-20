@@ -6,7 +6,7 @@ class Eff <: Command<Unit> {}
 
 main() {
     // Deferred Resumptions
-    let res: Box<Option<Resumption<String, Unit>>> = Box<Option<Resumption<String, Unit>>>(None)
+    let res: Box<?Resumption<String, Unit>> = Box(None)
     try {
         println(0)
         println(perform Luka())
@@ -26,7 +26,7 @@ main() {
     println(4)
 
     // Resumption with return type
-    let res2: Box<Option<Resumption<Unit, String>>> = Box<Option<Resumption<Unit, String>>>(None)
+    let res2: Box<?Resumption<Unit, String>> = Box(None)
     try {
         perform Alin()
         "try block"
@@ -37,7 +37,7 @@ main() {
 
     println(resume res2.value.getOrThrow())
 
-    let res3: Box<Option<Resumption<Unit, String>>> = Box<Option<Resumption<Unit, String>>>(None)
+    let res3: Box<?Resumption<Unit, String>> = Box(None)
     let cnt: Box<Int64> = Box(0)
     let val = try {
         perform Eff() // Line 43

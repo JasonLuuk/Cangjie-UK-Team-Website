@@ -28,7 +28,8 @@ func evalExpr(c: Expr): Int64 {
 }
 
 main() {
-    let c: RGBColor = RGBColor.Green // Specification needed to disambiguate from the function
+    // Specification needed to disambiguate from the function
+    let c: RGBColor = RGBColor.Green
     let cs = match (c) {
         case RGBColor.Red => "Red"
         case Green => "Green"

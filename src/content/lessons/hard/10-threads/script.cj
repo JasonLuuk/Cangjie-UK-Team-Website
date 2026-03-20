@@ -11,12 +11,14 @@ func f(from: String) {
 main() {
     f("direct")
 
-    spawn {
-        => f("Cangjie Thread")
+    spawn {=>
+        f("Cangjie Thread")
     }
 
+    // Remember that `=>` is omissible here
+    // as there are no arguments for the lambda
     spawn {
-        => {mess: String => println(mess)}("going")
+        {mess: String => println(mess)}("going")
     }
 
     sleep(Duration.second)

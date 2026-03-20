@@ -5,7 +5,8 @@ interface moneyStorage {
 struct Purse <: moneyStorage {
     public var money = 0
 
-    public mut func addMoney(): Unit { // Without mut, this would return an error
+    // Without mut, this would return an error
+    public mut func addMoney(): Unit {
         money += 1
     }
 }

@@ -2,7 +2,8 @@ func plus(a: Int64, b: Int64): Int64 {
     a + b
 }
 
-func plusPlus(a: Int64, b: Int64, c: Int64) { //return type can be inferred 
+// Return type can be inferred:
+func plusPlus(a: Int64, b: Int64, c: Int64) {
     a + b + c
 }
 

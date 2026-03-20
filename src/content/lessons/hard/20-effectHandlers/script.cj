@@ -42,7 +42,8 @@ main() {
             resume
         }
 
-        // After perform Three() is handled from line 50 it is not resumed, which means we will never reach this statement
+        // After perform Three() is handled from line 50 it is not resumed,
+        // which means we will never reach this statement
         println("Unreachable")
     } handle(_: One) {
         println("One")
@@ -61,7 +62,8 @@ main() {
         println("handler executed")
     }
 
-    // The effect neither has a default handler not is handled explicitly, so an exception is thrown
+    // The effect neither has a default handler not is handled
+    // explicitly, so an exception is thrown
     perform Two()
 }
 

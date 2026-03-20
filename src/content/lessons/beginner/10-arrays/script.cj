@@ -1,6 +1,8 @@
 main() {
-    var a: Array<Int64> = [1, 3, 2, 4] //  Array whose element type is Int64
-    var b: Array<String> = ["Hello", "World"] // Array whose element type is String
+    //  Array whose element type is Int64
+    var a: Array<Int64> = [1, 3, 2, 4]
+    // Array whose element type is String
+    var b: Array<String> = ["Hello", "World"]
 
     let c = Array<Int64>(3, item: 0)
     for (x in c) {

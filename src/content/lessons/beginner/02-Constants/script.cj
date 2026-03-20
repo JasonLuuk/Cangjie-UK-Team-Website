@@ -4,13 +4,15 @@ let s: String = "constant"
 
 main() {
     println(s)
+    // Type definition is not necessary here as it can be inferred
+    let n: Int64 = 500000000
 
-    let n: Int64 = 500000000 // Type definition is not necessary here as it can be inferred
-
-    let d = 3e20 / Float64(n) //Statically typed, need to cast int to float for interoperability
+    // Statically typed, need to cast int to float for interoperability
+    let d = 3e20 / Float64(n)
 
     println("${n} ${d}")
 
-    println(sin(Float64(n))) //sin doesn't work with Int
+    // sin does not work with Int
+    println(sin(Float64(n)))
 
 }

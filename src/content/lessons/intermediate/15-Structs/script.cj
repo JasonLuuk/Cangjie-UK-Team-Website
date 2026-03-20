@@ -40,7 +40,8 @@ struct Circle {
 
 main() {
     let myRectangle: Rectangle = Rectangle(2, 5)
-    let myRectangle2: Rectangle = Rectangle() //Uses the overloaded constructor
+    // Uses the overloaded constructor:
+    let myRectangle2: Rectangle = Rectangle()
 
     println(myRectangle.area())
     println(myRectangle2.area())

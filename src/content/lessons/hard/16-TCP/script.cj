@@ -20,7 +20,7 @@ func runTCPServer() {
 
 main() {
     let future = spawn {
-        => runTCPServer()
+        runTCPServer()
     }
 
     sleep(Duration.millisecond * 500)

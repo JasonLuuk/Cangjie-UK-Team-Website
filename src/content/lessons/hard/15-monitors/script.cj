@@ -6,14 +6,13 @@ var flag: Bool = true
 
 main(): Int64 {
     let fut = spawn {
-        =>
-            mon.lock()
-            while (flag) {
-                println("New thread: before wait")
-                mon.wait()
-                println("New thread: after wait")
-            }
-            mon.unlock()
+        mon.lock()
+        while (flag) {
+            println("New thread: before wait")
+            mon.wait()
+            println("New thread: after wait")
+        }
+        mon.unlock()
     }
 
     sleep(10 * Duration.millisecond)

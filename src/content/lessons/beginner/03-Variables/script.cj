@@ -14,8 +14,8 @@ main() {
     println(d)
 
     var e: Int64
-    //println(e)   
-    //cannot use uninitialized variable
+    // println(e)   
+    // cannot use uninitialized variable
 }
 
 // Output: 

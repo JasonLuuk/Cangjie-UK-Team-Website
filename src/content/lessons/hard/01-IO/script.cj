@@ -1,8 +1,10 @@
 import std.console.*
 
 main() {
-    let s1 = Console.stdIn.readln() // reads full line
-    let s2 = Console.stdIn.readUntil(r" ") // takes rune as input
+    // reads full line
+    let s1 = Console.stdIn.readln()
+    // takes rune as input
+    let s2 = Console.stdIn.readUntil(r" ")
 
     Console.stdOut.writeln(s1.getOrThrow())
     Console.stdOut.writeln(s2.getOrThrow())

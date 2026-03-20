@@ -17,7 +17,7 @@ func runUdpServer() {
 
 main() {
     let future = spawn {
-        => runUdpServer()
+        runUdpServer()
     }
 
     sleep(Duration.second)
@@ -25,7 +25,10 @@ main() {
     try (udpSocket = UdpSocket(bindAt: 0)) {
         udpSocket.sendTimeout = Duration.second * 2
         udpSocket.bind()
-        udpSocket.sendTo(SocketAddress("127.0.0.1", SERVER_PORT), Array<Byte>([1, 2, 69]))
+        udpSocket.sendTo(
+            SocketAddress("127.0.0.1", SERVER_PORT),
+            Array<Byte>([1, 2, 69])
+        )
     }
 
     future.get()
