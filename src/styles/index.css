@@ -1037,12 +1037,33 @@ a.brand-link:hover {
         padding: 0 1rem 1rem;
     }
 
+    .hero-section::before {
+        display: none;
+    }
+
+    .hero-section::after {
+        background: none;
+    }
+
+    .hero-section {
+        background: linear-gradient(90deg, #028273 0%, #338e81 100%);
+    }
+
+    .main-title {
+        color: #ffffff;
+    }
+
+    .subtitle {
+        color: rgba(255, 255, 255, 0.95);
+    }
+
     .main-title {
         font-size: 2.5rem;
     }
 
     .hero-section {
         padding: 2rem 1rem;
+        margin-bottom: 2.25rem;
     }
 
     .main-layout {
