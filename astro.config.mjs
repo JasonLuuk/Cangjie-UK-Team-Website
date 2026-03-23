@@ -3,8 +3,7 @@ import rehypeMermaid from 'rehype-mermaid';
 import cangjieShikiLanguage from './src/config/cangjie-shiki-language.mjs';
 
 export default defineConfig({
-  site: "https://cjpluk.github.io/Cangjie-UK-Team-Website/",
-  base: '/Cangjie-UK-Team-Website/',
+  site: "https://cjpluk.github.io/",
   output: 'static',
   markdown: {
     syntaxHighlight: {
